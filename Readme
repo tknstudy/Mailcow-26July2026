@@ -37,9 +37,7 @@ Intall Rocky Linux 9.7 [ not tested with 9.8]
    cd MailcowBootstrap-v1.0.0/
    sudo bash ./MailcowBootstrap.sh
 
-4) Comment either internal or external [ not tested without commenting ] 
-unzip MailcowConfig-v1.0.0.zip
-sudo ./MailcowConfig.sh
+mailcow config package is buggy -dont use that .Configure mailcow manually
 
 http://192.168.10.11 or http://192.168.10.12 
  admin / moohoo
