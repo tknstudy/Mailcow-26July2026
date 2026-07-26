@@ -1,0 +1,51 @@
+Readme Mailcow-26July2026 -ver0.73
+=========================================
+
+
+Bugs in this version :
+==============================
+After we setup the base infra , we must remove few dns entries :
+
+nmcli connection show
+sudo nmcli connection modify "ens192" ipv4.dns "172.16.1.10"
+
+#execute below command in console not in ssh
+sudo nmcli connection down "ens192"
+sudo nmcli connection up "ens192"
+or
+sudo systemctl restart NetworkManager
+
+Modify the mailcowconfig.conf before configuring mailcow and comment out either internal or external which
+ever is not relevant .
+
+How to use this package:?
+================================
+
+Intall Rocky Linux 9.7 [ not tested with 9.8]
+ Select Server without GUI 
+ create user demo 
+
+1) 1_LinuxInfra-v0.7.3.zip
+<<Exexute this in Console >>>>
+      unzip LinuxInfra-v0.7.3.zip
+        cd linuxinfra-v0.7.3/
+       sudo ./LinuxInfra.sh
+
+2) Modify the /etc/resolv.conf   [as explained above]
+
+3) unzip MailcowBootstrap-v1.0.0.zip 
+   cd MailcowBootstrap-v1.0.0/
+   sudo bash ./MailcowBootstrap.sh
+
+4) Comment either internal or external [ not tested without commenting ] 
+unzip MailcowConfig-v1.0.0.zip
+sudo ./MailcowConfig.sh
+
+http://192.168.10.11 or http://192.168.10.12 
+ admin / VMware1!
+
+
+
+
+
+sudo nmcli connection up "ens192"
