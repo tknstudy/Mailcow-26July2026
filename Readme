@@ -42,10 +42,9 @@ unzip MailcowConfig-v1.0.0.zip
 sudo ./MailcowConfig.sh
 
 http://192.168.10.11 or http://192.168.10.12 
- admin / VMware1!
+ admin / moohoo
+How to reset password of Mailcow?
+cd /opt/mailcow-dockerized
+sudo ./helper-scripts/mailcow-reset-admin.sh
 
 
-
-
-
-sudo nmcli connection up "ens192"
